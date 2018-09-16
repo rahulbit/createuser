@@ -1,29 +1,29 @@
 const mongoose = require('mongoose'),
  Schema = mongoose.Schema;
 
-const otpSchema = new Schema({
+const userSchema = new Schema({
     
     number :{
         type:'String',
         default:''
     },
 
-    messageid:{
-        type:'String',
+  
+
+    email:{
+        type:"String",
         default:''
     },
 
-    sentTime:{
-        type:"Date",
-        default:''
-    },
-
-    msg:{
+    userId:{
      type:'String',
-     default:''
+     default:'',
+     unique:'true'
     }
+
+   
 
 
 })
 
-mongoose.model('sms', otpSchema);
+mongoose.model('user', userSchema);
